@@ -1,0 +1,25 @@
+http://notesapp-v1.dicodingacademy.com/notes/new
+
+link di atas dibuat oleh front-end (client)
+langkah-langkah pembuatan web server API:
+1. Buat dulu link port yang menghubungkan link front-end dengan kita back-end
+2. Buat agar catatan dapat disave
+    - buat di routes -> metode post (membuat catatan), handler dibuat fungsi kosong dulu.
+    - modularisasi berkas dari notes ke handler, handler ke routes, routes ke server
+    - notes.js = buat array kosong dulu di notes, dan module.exports
+    - handler.js =  lihat point2 kriteria proyek apa saja : title, tags, body, id, createdAt, updatedAt.
+                    1. install nanodid dan panggil, utk membantu penulisan properti id
+                    2. panggil notes.js
+                    3. buat request, hapi sesuai kriteria proyek
+                    4. push ke file notes.js
+                    5. pastikan array notes. berhasil di push, dengan bantuan filter()
+                    6. module.exports
+    - routes.js =   1. panggil handler.js
+                    2. perbarui handler pada routes.
+                    3. module.exports
+    - server.js =   1. panggil routes.js
+                    2. tambah, server.route(routes)
+                    3. script sisanya aturan asyc yang dilatihan sebelumnya. 
+    - cek sudah bisa disave? 
+        > masih belum ternyata, karena akses dihalangi same-origin policy
+        > same origin policy : origin harus sama antara client dan web server. 
